@@ -105,4 +105,4 @@ $ ./example_mnist_test 4.bmp
 ## 次やること  
 * C++でcodingできるようにmnistのsampleコード読む
 * BNNのC++実装探してみる
-* mnistをvivadoで行為合成できるか試してみる
+* mnistをvivadoで高位合成できるか試してみる
