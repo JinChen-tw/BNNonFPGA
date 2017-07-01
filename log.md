@@ -91,6 +91,7 @@ accuracy:98.93% (9893/10000)
     9     0     0     0     1     6     0     0     2     2   987
 ```
 かかった時間は計測してないけど35m程度  
+(1epochに70sくらいだったから)  
 
 推論してみる  
 テスト用画像を[ここ](https://raw.githubusercontent.com/wiki/tiny-dnn/tiny-dnn/4.bmp)からwgetして、
