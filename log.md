@@ -4,9 +4,9 @@ path(mac)
 ```html:path
 /Users/yuma/github/BNNonFPGA
 ```  
-## 環境構築  
+## 環境構築(Mac)  
 Dependencies  
-* C++14 compiler (gcc 4.9+, clang 3.6+ or VS 2015+)  
+>C++14 compiler (gcc 4.9+, clang 3.6+ or VS 2015+)  
 
 #### gcc  
 gccっていうのはいろんなプログラミング言語のコンパイラパッケージのこと  
@@ -57,3 +57,22 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 *tiny-dnnを使う準備おっけい！！*
 
 ## テストコードを動かしてみる
+tiny-dnnのdevelopper曰く
+>tiny-dnn is header-only, so there's nothing to build. If you want to execute sample program or unit tests, you need to install cmake and type the following commands:
+
+チュートリアルに従ってやってみる  
+```
+$ cmake . -DBUILD_EXAMPLES=ON
+$ make
+```
+10分くらいでmake完了  
+Examplesに移動して再び`$ make`
+
+#### mnist
+datasetを[ここ](http://yann.lecun.com/exdb/mnist/)からdl  
+`examples/mnist/`におく  
+以下のコードで学習開始  
+(mnistディレクトリ内のtrain.cppをさっきのmakeでbuildしたのを実行)
+```
+$ ./example_mnist_train --data_path mnist --learning_rate 1 --epochs 30 --minibatch_size 16 --backend_type internal
+```
