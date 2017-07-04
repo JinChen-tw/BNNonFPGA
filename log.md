@@ -107,3 +107,8 @@ $ ./example_mnist_test 4.bmp
 * C++でcodingできるようにmnistのsampleコード読む
 * BNNのC++実装探してみる
 * mnistをvivadoで高位合成できるか試してみる
+
+# 2017/07/04  
+こないだ動かしたmnistのLeNet5による学習コードを精読してみた  
+詳しくは[ここ](https://github.com/yumfab-eeis/BNNonFPGA/blob/master/udst_train.md)  
+    

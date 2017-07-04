@@ -85,12 +85,21 @@ static void train_lenet(const std::string &data_dir_path,
                         const int n_train_epochs,
                         const int n_minibatch,
                         core::backend_t backend_type) {
+```
+関数の宣言、引数として、データのパス、学習率、エポック数、ミニバッチ、伝搬方法をとる
+
+```cpp                          
   // specify loss-function and learning strategy
   network<sequential> nn;
   adagrad optimizer;
 
   construct_net(nn, backend_type);
+```
+使用するnnを宣言  
+最適化手法としてadagradの使用を宣言  
+nnを構築する関数に渡す  
 
+```cpp  
   std::cout << "load models..." << std::endl;
 
   // load MNIST dataset
@@ -103,16 +112,26 @@ static void train_lenet(const std::string &data_dir_path,
   parse_mnist_labels(data_dir_path + "/t10k-labels.idx1-ubyte", &test_labels);
   parse_mnist_images(data_dir_path + "/t10k-images.idx3-ubyte", &test_images,
                      -1.0, 1.0, 2, 2);
+```
+学習・テストデータのローディング
 
+```cpp
   std::cout << "start training" << std::endl;
 
   progress_display disp(train_images.size());
   timer t;
+```
+学習の進行具合を表示
 
+```cpp
   optimizer.alpha *=
     std::min(tiny_dnn::float_t(4),
              static_cast<tiny_dnn::float_t>(sqrt(n_minibatch) * learning_rate));
+```
+学習率の最適化をしている  
+詳しく知る必要がある場合はAdagradについて調べる
 
+```cpp
   int epoch = 1;
   // create callback
   auto on_enumerate_epoch = [&]() {
@@ -131,7 +150,9 @@ static void train_lenet(const std::string &data_dir_path,
   // training
   nn.train<mse>(optimizer, train_images, train_labels, n_minibatch,
                 n_train_epochs, on_enumerate_minibatch, on_enumerate_epoch);
+```
 
+```cpp
   std::cout << "end training." << std::endl;
 
   // test and show results
@@ -140,3 +161,4 @@ static void train_lenet(const std::string &data_dir_path,
   nn.save("LeNet-model");
 }
 ```
+学習が終わったらテストを行い結果を表示・モデルの保存  
