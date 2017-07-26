@@ -111,4 +111,10 @@ $ ./example_mnist_test 4.bmp
 # 2017/07/04  
 こないだ動かしたmnistのLeNet5による学習コードを精読してみた  
 詳しくは[ここ](https://github.com/yumfab-eeis/BNNonFPGA/blob/master/udst_train.md)  
-    
+
+# 2017/07/05  
+こないだ動かしたmnistのLeNet5による学習コードを精読完了  
+
+# 2017/07/26
+動的Pruningについての検討をした
+詳しくはここ 
