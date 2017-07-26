@@ -140,3 +140,6 @@ Starting TensorBoard 47 at http://0.0.0.0:6006
 (Press CTRL+C to quit)
 ```
 こんな感じでローカルに立ち上がるので確認すると、
+![result](https://github.com/yumfab-eeis/BNNonFPGA/blob/master/dyn_pruning/img/mnist_train.png?raw=true)  
+こんな感じ  
+バイアスは変化が大きいけど、重みは線形変化しているきがするのでこれは途中で剪定できるのでは...  
